@@ -6,24 +6,21 @@ import org.junit.Test
 import static groovy.test.GroovyAssert.*
 
 class SampleClassTest {
-  def sampleClass
+  def configParser
 
   @Before
-  void setUp() {
-    sampleClass = new SampleClass()
+  void setVars() {
+    configParser = new ConfigParser()
   }
 
   @Test
-  void testIncrease() {
-    def actual =  """
-    key1: value1
-    key2: value2
-    """
+  void testYaml() {
+    Map actual = configParser.parseYamlFile("stands/prod.yml")
 
-    Map expect = [key1: "value1", key2: "value2"]
+    String expectDeployPlaybook = "site.yml"
+    Map expectExtraVars = [var_1: "test_var_1", var_2: "test_var_2", var_3: "test_var_3"]
 
-    println(sampleClass.parseYamlContent(actual))
-    
-    assertEquals expect, sampleClass.parseYamlContent(actual)
+    assertEquals expectDeployPlaybook, actual.deploy.playbook
+    assertEquals expectExtraVars, actual.deploy.extra_vars
   }
 }

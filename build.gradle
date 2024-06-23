@@ -29,3 +29,8 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     implementation 'org.yaml:snakeyaml:2.0'
 }
+
+// task runScript (dependsOn: 'classes', type: JavaExec) {
+//     main = 'sampleCall()'
+//     classpath = sourceSets.main.runtimeClasspath
+// }

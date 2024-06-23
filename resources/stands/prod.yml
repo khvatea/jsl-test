@@ -1,0 +1,12 @@
+---
+checkout:
+  url: "https://..."
+  branch: "master"
+
+deploy:
+  playbook: "site.yml"
+  extra_vars:
+    var_1: "test_var_1"
+    var_2: "test_var_2"
+    var_3: "test_var_3"
+...
