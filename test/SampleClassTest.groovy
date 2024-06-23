@@ -15,8 +15,15 @@ class SampleClassTest {
 
   @Test
   void testIncrease() {
-    sampleClass.age = 7  
-    def expect = 10
-    assertEquals expect, sampleClass.increaseAge(3)
+    def actual =  """
+    key1: value1
+    key2: value2
+    """
+
+    Map expect = [key1: "value1", key2: "value2"]
+
+    println(sampleClass.parseYamlContent(actual))
+    
+    assertEquals expect, sampleClass.parseYamlContent(actual)
   }
 }

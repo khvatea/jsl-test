@@ -27,4 +27,5 @@ repositories {
 dependencies {
     implementation 'org.codehaus.groovy:groovy-all:2.4.21'
     testImplementation 'junit:junit:4.12'
+    implementation 'org.yaml:snakeyaml:2.0'
 }

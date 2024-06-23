@@ -1,10 +1,14 @@
 package ru.nspk
 
-class SampleClass {
-   String name
-   Integer age
+import org.yaml.snakeyaml.Yaml
 
-   def increaseAge(Integer years) {
-      this.age += years
+class SampleClass {
+   def yaml
+   def data
+
+   def parseYamlContent(String yamlContent) {
+      yaml = new Yaml()
+      data = yaml.load(yamlContent)
+      return data
    }
 }
