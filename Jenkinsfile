@@ -8,7 +8,8 @@ pipeline {
             steps {
                 script {
                     library 'jsl-test'
-                    // Здесь вызовите функции из вашей Shared Library
+                    
+                    deployStage();
                 }
             }
         }
